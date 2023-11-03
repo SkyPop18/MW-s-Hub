@@ -1,0 +1,389 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mc Nation</title>
+    </head>
+
+      <style>
+        body {
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #222;
+        }
+
+
+
+        h1 {
+            font-size: 36px;
+            color: #8B0000;
+            text-decoration: underline;
+            text-decoration-color: #FF0000;
+        }
+
+        p1 {
+            font-size: 28px;
+            color: #8B0000;
+            text-decoration: underline;
+            text-decoration-color: #FF0000;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #FF0000;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #FF7276;
+        }
+
+        h4 {
+            font-size: 38px;
+            color: #808080;
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        p2 {
+            font-size: 18px;
+            line-height: 1.6;
+            color: green;
+        }
+
+        p4 {
+          font-size: 5px;
+          color: light gray;
+        }
+
+        p10 {
+            font-size: 60px;
+            line-height: 1.6;
+          color: #222;
+        }
+
+        p11 {
+            font-size: 52px;
+            line-height: 1.6;
+          color: #333;
+
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .feature-box {
+            background-color: #555;
+            color: white;
+            border-radius: 20px;
+            flex: 1;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .feature-title {
+            color: #FF7276;
+        }
+
+        .discord-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+
+        
+
+.Host-button, .discord-button {
+    background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 10px; /* Add spacing between buttons */
+    animation: shake 3s ease infinite; /* Add a shaking animation that runs for 3 seconds initially */
+    transform: rotate(0deg); /* Set the initial rotation to 0 degrees */
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg) translateX(0);
+    }
+    25% {
+        transform: rotate(5deg) translateX(5px);
+    }
+    50% {
+        transform: rotate(-5deg) translateX(-5px);
+    }
+    75% {
+        transform: rotate(5deg) translateX(5px);
+    }
+    100% {
+        transform: rotate(-5deg) translateX(-5px);
+    }
+}
+    }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #a9a9a9;
+            color: purple;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: centre;
+        }
+
+        .button:hover {
+            background-color: #ff9800;
+        }
+
+        .mc-nation-image {
+            max-width: 100%;
+            height: 400px;
+            width: 500px;
+            transition: transform 0.3s ease; /* Add a smooth transition effect */
+        }
+
+        .mc-nation-image:hover {
+            transform: scale(1.1); /* Scale the image by 10% on hover */
+        }
+
+        /* Add some spacing */
+        .gap {
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+                margin: 10px auto;
+            }
+        }
+
+
+      </style>
+    <body>
+
+      <head>
+        <script>
+            // Function to start the shaking animation
+            function startShaking() {
+                var buttons = document.querySelectorAll(".Host-button, .discord-button");
+                buttons.forEach(function (button) {
+                    button.style.animation = "shake 3s ease infinite"; // Use style.animation to add the shaking animation
+                });
+            }
+
+            // Function to generate a random color
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            // Function to change the color randomly when touching the sides
+            function changeColorOnTouchSides() {
+                const discordButton = document.getElementById('discord-button');
+                if (discordButton.getBoundingClientRect().left <= 0 || discordButton.getBoundingClientRect().right >= window.innerWidth) {
+                    discordButton.style.backgroundColor = getRandomColor();
+                }
+                requestAnimationFrame(changeColorOnTouchSides);
+            }
+
+            // Add an event listener to start the animation when the page is fully loaded
+            window.addEventListener("load", function () {
+                setTimeout(startShaking, 1000); // Delay the animation start for 1 second (adjust as needed)
+            });
+
+            // Start checking for side touches
+            changeColorOnTouchSides();
+        </script>
+        
+      
+      
+      
+
+      </head>
+      
+      <header>
+            <img src="Mc's Nation .png" alt="MC nation pfp" style="max-width: 100%; height: 450px; width: 600px;">
+            <h1>Welcome to Mc's Nation</h1>
+
+
+          <div class="button-container">
+    <a href="https://discord.gg/8PQW9rqzp7" id="discord-button" class="discord-button">Discord</a>
+          </div>
+        
+  
+
+          
+
+
+          
+          <p10 class="gap">--------------------------------------------------</p10>
+
+            <h3>Enchant Your LifeSteal To A New Level</h3>
+
+            <p10 class="gap">--------------------------------------------------</p10>
+
+
+          <a href="MCsNation.aternos.me:28760" class="button">IP- MCsNation.aternos.me:28760</a>
+        </header>
+
+      <p11 class="gap">--------------------------------------------------</p11>
+
+
+        <section style="padding-top: 60px;">
+
+
+            </div>
+        </section>
+
+
+
+        <section>
+            <div class="features">
+                <div class="feature-box">
+                    <h3 class="feature-title">FAST</h3>
+                    <p>Nᴏ_Lᴀɢɢ</p>
+                </div>
+                <div class="feature-box">
+                    <h3 class="feature-title">Secure</h3>
+                    <p>Yᴏᴜʀ Aᴄᴄᴏᴜɴᴛ Iꜱ Sᴀꜰᴇ Wɪᴛʜ Oᴜʀ Lᴏɢɪɴ Pʟᴜɢɪɴ</p>
+                </div>
+                <div class="feature-box">
+                    <h3 class="feature-title">Happy users</h3>
+                    <p>Fʀɪᴇɴᴅʟʏ Cᴏᴍᴍᴜɴɪᴛʏ</p>
+                </div>
+            </div>
+        </section>
+
+        <p11 class="gap">--------------------------------------------------------------------------------------------------</p11>
+
+    </header>
+
+
+
+
+
+                <header>
+                  <p10 class="gap">--------------------------------------------------</p10>
+                  <p10 class="gap">--------------------------------------------------</p10>
+                  <section>
+                      <h2>More About Us</h2>
+                      <p>Exᴘʟᴏʀᴇ Mɪɴᴇᴄʀᴀꜰᴛ: Jᴏɪɴ Oᴜʀ Cᴏᴍᴍᴜɴɪᴛʏ Oꜰ Mɪɴᴇᴄʀᴀꜰᴛ Eɴᴛʜᴜꜱɪᴀꜱᴛꜱ. Sʜᴀʀᴇ Yᴏᴜʀ Cʀᴇᴀᴛɪᴏɴꜱ, Tɪᴘꜱ, Aɴᴅ Aᴅᴠᴇɴᴛᴜʀᴇꜱ.</p>
+                      <p>--------------------------------------------------</p>
+                      <p>Eᴠᴇɴᴛꜱ & Cᴏɴᴛᴇꜱᴛꜱ: Pᴀʀᴛɪᴄɪᴘᴀᴛᴇ Iɴ Mɪɴᴇᴄʀᴀꜰᴛ Eᴠᴇɴᴛꜱ Aɴᴅ Cᴏɴᴛᴇꜱᴛꜱ Tᴏ Wɪɴ Iɴ-Gᴀᴍᴇ Pʀɪᴢᴇꜱ Aɴᴅ Rᴇᴄᴏɢɴɪᴛɪᴏɴ.</p>
+                      <p>--------------------------------------------------</p>
+                      <p>Sᴇʀᴠᴇʀ Sʜᴏᴡᴄᴀꜱᴇꜱ: Pʀᴏᴍᴏᴛᴇ Yᴏᴜʀ Sᴇʀᴠᴇʀ Oʀ Fɪɴᴅ Nᴇᴡ Oɴᴇꜱ Tᴏ Pʟᴀʏ Oɴ. Sʜᴀʀᴇ Aɴᴅ Dɪꜱᴄᴏᴠᴇʀ Uɴɪǫᴜᴇ Exᴘᴇʀɪᴇɴᴄᴇꜱ.</p>
+                      <p>--------------------------------------------------</p>
+                      <p>Hᴇʟᴘꜰᴜʟ Sᴛᴀꜰꜱ: Oᴜʀ Fʀɪᴇɴᴅʟʏ Sᴛᴀꜰꜱ Iꜱ Hᴇʀᴇ Tᴏ Aꜱꜱɪꜱᴛ Yᴏᴜ, Mᴀᴋɪɴɢ Yᴏᴜʀ Mɪɴᴇᴄʀᴀꜰᴛ Jᴏᴜʀɴᴇʏ Sᴍᴏᴏᴛʜᴇʀ.</p>
+
+
+                </section>
+
+
+                  <p10 class="gap">--------------------------------------------------</p10>
+
+
+
+                  <p10 class="gap">--------------------------------------------------</p10>
+
+                  <section>
+
+
+    <h1>Meet our team</h1>
+      <h2> Founder</h2>
+
+     <img src="My own pfp .png" alt="SkyPop" style="max-width: 100%; height: auto; width: 100px; border-radius:50%;"> 
+
+     <h4>_-------------_</h4>
+
+    </section>
+          <section>
+            <h2> Owner</h2> 
+            <img src="Pak pfp.png" alt="PAk pfp" style="max-width: 100%; height: auto; width: 100px; border-radius: 50%;">
+
+             <h4>_-------------_</h4>
+          </section>
+
+          <section>
+            <h2> Admin</h2>
+            <img src="Itsayan.png" alt="mr X pfp" style="max-width: 100%; height: auto; width: 100px; border-radius: 50%;">
+
+
+
+             <h4>_-------------_</h4>
+          </section>
+
+          <section>
+          <h2> Moderators</h2>
+           <img src="Rayyan pfp.png" alt="rayyan pfp" style="max-width: 100%; height: auto; width: 100px; border-radius: 50%;">
+
+            <img src="combo pfp .png" alt="Combo pfp" style="max-width: 100%; height: auto; width: 100px; border-radius: 50%;">
+
+            <h4>_-------------_</h4>
+
+         <h2> Staff</h2>
+           <img src="b0b2dd1f036af4d082f2100ca89a6cec.png" alt="unknown pfp" style="max-width: 100%; height: auto; width: 100px; border-radius: 50%;">
+
+          </section>
+
+
+        <section>
+          <p10 class="gap">--------------------------------------------------</p10>
+          <p10 class="gap">--------------------------------------------------</p10>
+            <h1>Contact Us</h1>
+            <p>Feel free to contact us on our Discord.</p>
+        </section>
+
+          <section>
+            
+<div class="button-container">
+            <a href="https://discord.gg/8PQW9rqzp7" class="discord-button">Discord</a>
+            
+
+            </div>
+          </section>
+    </header>
+
+      <p4>website credit goes to Akshat Sharma (Founder)</p4>
+
+    </body>
+</html>
+
+
+
